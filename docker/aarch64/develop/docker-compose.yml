@@ -1,9 +1,0 @@
-version: "3.8"
-
-services:
-  template:
-    image: template:latest
-    build:
-      context: ../../../src
-      dockerfile: dockerfile
-    command: ros2 run template node

@@ -1,19 +1,19 @@
-FROM ros:humble-ros-core
+ARG BASE
+FROM ${BASE}
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-colcon-common-extensions \
     build-essential \
-    # Add your dependencies
     && rm -rf /var/lib/apt/lists/* \
     && apt-get autoremove -y \
     && apt-get clean
 
-COPY template /template/src/template
+COPY src/package /template/src/package
 WORKDIR /template
 
-RUN . /opt/ros/${ROS_DISTO}/setup.sh && colcon build
+RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build
 
-COPY template/entrypoint/entrypoint.sh /template
+COPY src/package/entrypoint.sh /template
 ENTRYPOINT [ "/template/entrypoint.sh" ]
 
 CMD ["sleep", "infinity"]

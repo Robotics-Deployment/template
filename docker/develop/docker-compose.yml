@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  template:
+    image: template:latest
+    build:
+      context: ../..
+      dockerfile: docker/develop/Dockerfile
+      network_mode: host
+      ipc: host
+      args:
+        - BASE=ros:humble-ros-core
+    command: ["ros2", "run", "package", "node"]

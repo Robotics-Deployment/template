@@ -4,8 +4,8 @@ services:
   template:
     image: template:latest
     build:
-      context: ../..
-      dockerfile: docker/develop/Dockerfile
+      context: ..
+      dockerfile: dev.Dockerfile
       network_mode: host
       ipc: host
       args:

@@ -1,13 +1,16 @@
 version: "3.8"
 
 services:
-  template:
-    image: template:latest
+  package-dev:
+    image: project:package-dev-amd64
     build:
-      context: ..
-      dockerfile: dev.Dockerfile
-      network_mode: host
-      ipc: host
-      args:
-        - BASE=ros:humble-ros-core
-    command: ["ros2", "run", "package", "node"]
+      context: ../..
+      dockerfile: package/docker/dev.Dockerfile
+    command: ["colcon" , "test"]
+
+  package-prod:
+    image: project:package-prod-amd64
+    build:
+      context: ../..
+      dockerfile: package/docker/prod.Dockerfile
+    command: [ "ros2" , "run", "package", "node" ]

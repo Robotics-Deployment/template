@@ -1,6 +1,6 @@
 #include "test/test_package.hpp"
 
-TEST(package_name, initialization)
+TEST(package, initialization)
 {
     auto node = std::make_shared<PackageNode>();
     rclcpp::spin_some(node);

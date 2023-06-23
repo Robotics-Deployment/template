@@ -6,10 +6,12 @@ services:
     build:
       context: ../..
       dockerfile: package/docker/dev.Dockerfile
-    command: ["colcon" , "test"]
+    command: ["colcon" , "test", "--event-handlers", "console_cohesion+", "--ctest-args", "-R", "package"]
 
   package-prod:
     image: project:package-prod-amd64
     build:
       dockerfile: prod.Dockerfile
     command: [ "ros2" , "run", "package", "node" ]
+    depends_on:
+      - package-dev

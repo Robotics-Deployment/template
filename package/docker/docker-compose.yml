@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  package-dev:
+    image: project:package-dev-amd6432
+    build:
+      context: ../..
+      dockerfile: package/docker/dev.Dockerfile
+    command: ["colcon" , "test", "--event-handlers", "console_cohesion+", "--pytest-args", "test/test_package.py"]
+
+  package-prod:
+    image: project:package-prod-amd64
+    build:
+      dockerfile: prod.Dockerfile
+    command: [ "ros2" , "run", "package", "node" ]

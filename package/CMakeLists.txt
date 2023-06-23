@@ -19,5 +19,6 @@ if (BUILD_TESTING)
 endif ()
 
 install(TARGETS node DESTINATION lib/${PROJECT_NAME})
+install(FILES entrypoint.sh DESTINATION share/${PROJECT_NAME})
 
 ament_package()

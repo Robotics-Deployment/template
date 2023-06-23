@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   package-dev:
-    image: project:package-dev-amd6432
+    image: project:package-dev-amd64
     build:
       context: ../..
       dockerfile: package/docker/dev.Dockerfile
@@ -13,3 +13,5 @@ services:
     build:
       dockerfile: prod.Dockerfile
     command: [ "ros2" , "run", "package", "node" ]
+    depends_on:
+      - package-dev

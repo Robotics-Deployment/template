@@ -14,13 +14,13 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='deniz',
-    maintainer_email='deniz.hofmeister@gmail.com',
+    maintainer_email='deniz@roboticsdeployment.com',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'node = package.node:main'
+            'node = package.main:main'
         ],
     },
 )

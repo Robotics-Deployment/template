@@ -6,7 +6,7 @@ services:
     build:
       context: ../..
       dockerfile: package/docker/dev.Dockerfile
-    command: ["colcon" , "test", "--event-handlers", "console_cohesion+", "--pytest-args", "test/test_package.py"]
+    command: ["cargo", "test", "--manifest-path", "src/package/Cargo.toml"]
 
   package-prod:
     image: project:package-prod-amd64

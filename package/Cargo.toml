@@ -1,0 +1,23 @@
+[package]
+name = "package"
+version = "0.3.1"
+# This project is not military-sponsored, Jacob's employment contract just requires him to use this email address
+authors = ["Esteve Fernandez <esteve@apache.org>", "Nikolai Morin <nnmmgit@gmail.com>", "Jacob Hassold <jacob.a.hassold.civ@army.mil>"]
+edition = "2021"
+
+[[bin]]
+name = "node"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = {version = "1", features = ["backtrace"]}
+test_msgs = {version = "*"}
+
+[dependencies.rclrs]
+version = "0.3"
+
+[dependencies.rosidl_runtime_rs]
+version = "0.3"
+
+[dependencies.std_msgs]
+version = "*"

@@ -3,8 +3,8 @@
 <package format="3">
   <name>package</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="deniz.hofmeister@gmail.com">deniz</maintainer>
+  <description>Template Package</description>
+  <maintainer email="deniz@roboticsdeployment.com">deniz</maintainer>
   <license>TODO: License declaration</license>
 
   <test_depend>ament_copyright</test_depend>

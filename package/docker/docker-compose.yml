@@ -13,3 +13,5 @@ services:
     build:
       dockerfile: prod.Dockerfile
     command: [ "ros2" , "run", "package", "node" ]
+    depends_on:
+      - package-dev

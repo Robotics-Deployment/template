@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY package /project/src/package
 WORKDIR /project
 
-RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build
+RUN . /opt/ros/${ROS_DISTRO}/setup_yocto_workspace.sh && colcon build
 RUN echo "source /project/install/setup.bash" >> /root/.bashrc
 ENTRYPOINT [ "/project/src/package/entrypoint.sh" ]
 

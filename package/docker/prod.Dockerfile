@@ -2,7 +2,7 @@ ARG SOURCE_IMAGE=project:package-dev-amd64
 ARG PROD_BASE=ros:humble-ros-core
 
 FROM ${SOURCE_IMAGE} as dev
-RUN . /opt/ros/${ROS_DISTRO}/setup_yocto_workspace.sh && colcon test
+RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon test
 
 FROM ${PROD_BASE}
 
